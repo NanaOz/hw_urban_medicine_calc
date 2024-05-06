@@ -67,6 +67,15 @@ class PatientsFragment : Fragment(), PatientsAdapter.PatientItemClickListener {
     }
 
     override fun onPatientItemClick(patient: Patient, position: Int) {
-        TODO("Not yet implemented")
+        val patientInfoFragment = PatientInfoFragment()
+
+        val bundle = Bundle()
+        bundle.putSerializable("patient", patient)
+        patientInfoFragment.arguments = bundle
+
+        requireActivity().supportFragmentManager.beginTransaction()
+            .replace(R.id.fragment_container, patientInfoFragment)
+            .addToBackStack(null)
+            .commit()
     }
 }

@@ -20,6 +20,16 @@ class PatientInfoFragment : Fragment() {
 
         val fragmentManager = requireFragmentManager()
 
+        val patient = arguments?.getSerializable("patient") as? Patient
+        if (patient != null) {
+            binding.textViewName.text = patient.name
+            binding.textViewAge.text = patient.age.toString()
+            binding.textViewIMT.text = patient.itm
+            binding.textViewRateInfusionDrug.text = patient.rateInfusionDrug
+            binding.textViewPotassiumDeficiency.text = patient.potassiumDeficiency
+            binding.textViewRateOfIntravenousDripAdministrationDrug.text = patient.rateOfIntravenousDripAdministrationDrug
+        }
+
         binding.buttonBack.setOnClickListener {
             val patientFragment =PatientsFragment()
             fragmentManager.beginTransaction()
