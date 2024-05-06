@@ -16,7 +16,6 @@
         android:textColor="@color/white"
         android:textStyle="bold"/>
 
-
     <Button
         android:id="@+id/buttonIMT"
         android:layout_width="match_parent"
