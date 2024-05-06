@@ -1,0 +1,24 @@
+<resources>
+    <string name="app_name">hw_urban_medicine_calc</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="calculators">Калькуляторы</string>
+    <string name="imt">ИМТ</string>
+    <string name="rateInfusionDrug">Скорость инфузии препарата</string>
+    <string name="potassiumDeficiency">Дефецит калия</string>
+    <string name="rateOfIntravenousDripAdministrationDrug">Скорость внутривенного капельного введения препарата</string>
+    <string name="patients">Пациенты</string>
+    <string name="addPatient">Добавить пациента</string>
+    <string name="makeCalculate">Расчитать</string>
+    <string name="enterHeight">Введите рост</string>
+    <string name="enterWeight">Введите вес</string>
+    <string name="imtInfo">Индекс массы тела -  это величина, применяемая для оценки степени соответствия роста и массы человека и оценки массы тела (масса тела может быть нормальной, недостаточной, избыточной (ожирение). Индекс массы тела рассчитывается по формуле: масса (кг)/ рост2(м2).</string>
+    <string name="back">Назад</string>
+    <string name="rateInfusionDrugInfo">Скорость инфузии препарата - это количество препарата, которое вводится в организм пациента за определенное время.Рассчитывается по формуле (Weight * Dose per kg) / 1000\nГде:\nWeight - вес пациента (кг)\nDose per kg - доза препарата на единицу веса пациента (мг/кг)</string>
+    <string name="potassiumDeficiencyInfo">Расчет дефицита калия в плазме крови и объема его возмещения. Дефицит калия (ммоль/л) = (5 - калий плазмы пациента в ммоль/л) * 0.2 * массу тела пациента 1 ммоль калия = 39.1 мг калия. 1 грамм калия хлорида (KCL) = 13.4 ммоль калия Общая суточная доза не должна превышать более 3 ммоль/кг/сут, а скорость инфузии - 20 ммоль/ч. Следует знать, что 7,5% - ый раствор KCl является эквимолярным, то есть в 1 миллилтре такого раствора содержится 1 ммоль калия.</string>
+    <string name="RateOfIntravenousDripAdministrationDrugInfo">Расчет скорости внутривенного капельного введения препарата Расчет по формуле количество капель в минуту = V*20/t, где V - объем раствора в милилитрах. t - время в минутах, 20 - среднее количество капель в милилитре. v - скорость введения в каплях в минуту.</string>
+    <string name="addKplasma">К плазмы ммоль/л</string>
+    <string name="addDose">Введите дозу мк/кг</string>
+    <string name="enterVolume">Объем раствора мл</string>
+    <string name="enterTime">Время в мин</string>
+</resources>
