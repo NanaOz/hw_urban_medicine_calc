@@ -21,4 +21,8 @@
     <string name="addDose">Введите дозу мк/кг</string>
     <string name="enterVolume">Объем раствора мл</string>
     <string name="enterTime">Время в мин</string>
+    <string name="add">Добавить</string>
+    <string name="age">Возраст</string>
+    <string name="namePatient">ФИО пациента</string>
+    <string name="patientInfo">О пациенте</string>
 </resources>

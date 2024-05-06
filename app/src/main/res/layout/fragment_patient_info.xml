@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".PatientInfoFragment">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/patientInfo"
+        android:textSize="20sp"
+        android:padding="16dp"
+        android:background="@color/blue"
+        android:textColor="@color/white"
+        android:textStyle="bold"/>
+
+
+    <TextView
+        android:id="@+id/textViewName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Name Name Name"
+        android:textSize="16sp"
+        android:padding="16dp"/>
+
+    <TextView
+        android:id="@+id/textViewAge"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="34"
+        android:textSize="16sp"
+        android:padding="16dp"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Отчеты:"
+        android:textStyle="bold"
+        android:textSize="18sp"
+        android:padding="16dp"/>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="ИМТ:"
+            android:layout_weight="1"
+            android:textStyle="bold"
+            android:textSize="16sp"
+            android:padding="16dp"/>
+
+        <TextView
+            android:id="@+id/textViewIMT"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="00.0"
+            android:textSize="16sp"
+            android:padding="16dp"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Скорость инфузии препарата:"
+            android:layout_weight="1"
+            android:textStyle="bold"
+            android:textSize="16sp"
+            android:padding="16dp"/>
+
+        <TextView
+            android:id="@+id/textViewRateInfusionDrug"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="00.0"
+            android:textSize="16sp"
+            android:padding="16dp"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Дефицит калия:"
+            android:layout_weight="1"
+            android:textStyle="bold"
+            android:textSize="16sp"
+            android:padding="16dp"/>
+
+        <TextView
+            android:id="@+id/textViewPotassiumDeficiency"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="00.0"
+            android:textSize="16sp"
+            android:padding="16dp"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Скорость внутривенного капельного введения препарата:"
+            android:layout_weight="1"
+            android:textStyle="bold"
+            android:textSize="16sp"
+            android:padding="16dp"/>
+
+        <TextView
+            android:id="@+id/textViewRateOfIntravenousDripAdministrationDrug"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="00.0"
+            android:textSize="16sp"
+            android:padding="16dp"/>
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/buttonBack"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/back"
+        android:backgroundTint="@color/blue"
+        android:textSize="16sp"
+        android:padding="16dp"
+        android:layout_marginVertical="12dp"/>
+
+</LinearLayout>

@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".PatientAddFragment">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/addPatient"
+        android:textSize="20sp"
+        android:padding="16dp"
+        android:background="@color/blue"
+        android:textColor="@color/white"
+        android:textStyle="bold"/>
+
+    <EditText
+        android:id="@+id/editTextNamePatient"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="12dp"
+        android:layout_marginVertical="12dp"
+        android:hint="@string/namePatient"/>
+
+    <EditText
+        android:id="@+id/editTextAge"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginVertical="12dp"
+        android:inputType="number"
+        android:hint="@string/age"/>
+
+
+    <Button
+        android:id="@+id/buttonAddPatient"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="@string/add"
+        android:backgroundTint="@color/blue"
+        android:textSize="16sp"
+        android:layout_marginVertical="12dp"/>
+
+    <Button
+        android:id="@+id/buttonBack"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/back"
+        android:backgroundTint="@color/blue"
+        android:textSize="16sp"
+        android:padding="16dp"
+        android:layout_marginVertical="12dp"/>
+
+</LinearLayout>
