@@ -5,15 +5,30 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import com.example.hw_urban_medicine_calc.databinding.FragmentCalculatorImtBinding
 
 
 class CalculatorImtFragment : Fragment() {
+
+    private lateinit var binding: FragmentCalculatorImtBinding
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.fragment_calculator_imt, container, false)
+        binding = FragmentCalculatorImtBinding.inflate(inflater, container, false)
+        val view = binding.root
+
+        val fragmentManager = requireFragmentManager()
+
+        binding.buttonBack.setOnClickListener {
+            val calculateFragment = CalculateFragment()
+            fragmentManager.beginTransaction()
+                .replace(R.id.fragment_container, calculateFragment)
+                .commit()
+        }
+
+        return view
     }
 
 

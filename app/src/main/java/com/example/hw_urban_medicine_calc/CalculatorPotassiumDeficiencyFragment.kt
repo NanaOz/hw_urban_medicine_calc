@@ -5,14 +5,30 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import com.example.hw_urban_medicine_calc.databinding.FragmentCalculatorImtBinding
+import com.example.hw_urban_medicine_calc.databinding.FragmentCalculatorPotassiumDeficiencyBinding
 
 class CalculatorPotassiumDeficiencyFragment : Fragment() {
+
+    private lateinit var binding: FragmentCalculatorPotassiumDeficiencyBinding
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.fragment_calculator_potassium_deficiency, container, false)
+        binding = FragmentCalculatorPotassiumDeficiencyBinding.inflate(inflater, container, false)
+        val view = binding.root
+
+        val fragmentManager = requireFragmentManager()
+
+        binding.buttonBack.setOnClickListener {
+            val calculateFragment = CalculateFragment()
+            fragmentManager.beginTransaction()
+                .replace(R.id.fragment_container, calculateFragment)
+                .commit()
+        }
+
+        return view
     }
 
 }
