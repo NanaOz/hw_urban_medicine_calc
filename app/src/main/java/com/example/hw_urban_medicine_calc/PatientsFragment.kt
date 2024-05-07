@@ -9,6 +9,7 @@ import android.view.MenuInflater
 import android.view.MenuItem
 import android.view.View
 import android.view.ViewGroup
+import android.view.animation.AnimationUtils
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.ItemTouchHelper
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -33,6 +34,11 @@ class PatientsFragment : Fragment(), PatientsAdapter.PatientItemClickListener {
         val toolbar = binding.toolbar
         (requireActivity() as AppCompatActivity).setSupportActionBar(toolbar)
         setHasOptionsMenu(true)
+
+        val slideUp = AnimationUtils.loadAnimation(requireContext(), R.anim.slide_up)
+
+        binding.buttonAddPatient.startAnimation(slideUp)
+        binding.recyclerView.startAnimation(slideUp)
 
         dbHelper = DBHelper(requireContext(), null)
 

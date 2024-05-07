@@ -34,18 +34,6 @@ class DBHelper (context: Context, factory: SQLiteDatabase.CursorFactory?) :
         db?.execSQL("DROP TABLE IF EXISTS $TABLE_NAME")
     }
 
-//    fun addPatient(name: String, age: Int, imt: String, rid: String, pd: String, roidad: String){
-//        val values = ContentValues()
-//        values.put(KEY_NAME, name)
-//        values.put(KEY_AGE, age)
-//        values.put(KEY_IMT, imt)
-//        values.put(KEY_RID, rid)
-//        values.put(KEY_PD, pd)
-//        values.put(KEY_ROIDAD, roidad)
-//        val db = this.writableDatabase
-//        db.insert(TABLE_NAME,null, values)
-//        db.close()
-//    }
 fun addPatient(patient: Patient): Long {
     val values = ContentValues()
     values.put(KEY_NAME, patient.name)

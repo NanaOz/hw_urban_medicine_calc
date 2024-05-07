@@ -8,6 +8,7 @@ import android.view.MenuInflater
 import android.view.MenuItem
 import android.view.View
 import android.view.ViewGroup
+import android.view.animation.AnimationUtils
 import androidx.appcompat.app.AppCompatActivity
 import com.example.hw_urban_medicine_calc.databinding.FragmentCalculateBinding
 
@@ -26,6 +27,13 @@ class CalculateFragment : Fragment() {
         val toolbar = binding.toolbar
         (requireActivity() as AppCompatActivity).setSupportActionBar(toolbar)
         setHasOptionsMenu(true)
+
+        val slideUp = AnimationUtils.loadAnimation(requireContext(), R.anim.slide_up)
+
+        binding.buttonIMT.startAnimation(slideUp)
+        binding.buttonRateInfusionDrug.startAnimation(slideUp)
+        binding.buttonPotassiumDeficiency.startAnimation(slideUp)
+        binding.buttonRateOfIntravenousDripAdministrationDrug.startAnimation(slideUp)
 
         val fragmentManager = requireFragmentManager()
 
