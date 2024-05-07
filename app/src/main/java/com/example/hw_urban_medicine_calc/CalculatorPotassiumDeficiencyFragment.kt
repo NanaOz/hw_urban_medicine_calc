@@ -48,7 +48,7 @@ class CalculatorPotassiumDeficiencyFragment : Fragment() {
                 }
 
                 binding.textViewResult.text = result
-                selectedPatient.itm = result
+                selectedPatient.potassiumDeficiency = result
                 dbHelper.updateName(selectedPatient)
             } else {
                 Toast.makeText(requireContext(), "Введите вес и К-плазму пациента в ммоль/л", Toast.LENGTH_SHORT).show()
