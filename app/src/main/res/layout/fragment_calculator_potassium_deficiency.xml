@@ -26,7 +26,7 @@
         android:hint="@string/enterWeight"/>
 
     <EditText
-        android:id="@+id/editTextHeight"
+        android:id="@+id/editTextMmol"
         android:layout_width="200dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
