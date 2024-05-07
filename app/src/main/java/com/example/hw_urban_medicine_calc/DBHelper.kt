@@ -79,4 +79,10 @@ fun addPatient(patient: Patient): Long {
         db.update(TABLE_NAME, values, "$KEY_ID=?", arrayOf(patient.id.toString()))
         db.close()
     }
+
+    fun deletePatient(patient: Patient) {
+        val db = this.writableDatabase
+        db.delete(TABLE_NAME, "$KEY_ID = ?", arrayOf(patient.id.toString()))
+        db.close()
+    }
 }

@@ -10,7 +10,9 @@ import android.view.MenuItem
 import android.view.View
 import android.view.ViewGroup
 import androidx.appcompat.app.AppCompatActivity
+import androidx.recyclerview.widget.ItemTouchHelper
 import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.example.hw_urban_medicine_calc.databinding.FragmentPatientsBinding
 import java.io.Serializable
 
@@ -39,6 +41,23 @@ class PatientsFragment : Fragment(), PatientsAdapter.PatientItemClickListener {
         binding.recyclerView.adapter = adapter
 
         readDataFromDatabase()
+
+        val itemTouchHelper = ItemTouchHelper(object : ItemTouchHelper.SimpleCallback(0, ItemTouchHelper.LEFT or ItemTouchHelper.RIGHT) {
+            override fun onMove(recyclerView: RecyclerView, viewHolder: RecyclerView.ViewHolder, target: RecyclerView.ViewHolder): Boolean {
+                return false
+            }
+
+            override fun onSwiped(viewHolder: RecyclerView.ViewHolder, direction: Int) {
+                val position = viewHolder.adapterPosition
+                val deletedPatient = patientList[position]
+
+                dbHelper.deletePatient(deletedPatient)
+                patientList.removeAt(position)
+                adapter.notifyItemRemoved(position)
+            }
+        })
+
+        itemTouchHelper.attachToRecyclerView(binding.recyclerView)
 
         binding.buttonAddPatient.setOnClickListener {
             val patientAddFragment = PatientAddFragment()
