@@ -16,22 +16,53 @@
         android:textColor="@color/white"
         android:textStyle="bold"/>
 
-    <EditText
-        android:id="@+id/editTextWeight"
-        android:layout_width="200dp"
+    <LinearLayout
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_marginTop="12dp"
-        android:layout_marginVertical="12dp"
-        android:hint="@string/enterWeight"/>
+        android:orientation="horizontal">
 
-    <EditText
-        android:id="@+id/editTextHeight"
-        android:layout_width="200dp"
+        <EditText
+            android:id="@+id/editTextWeight"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="12dp"
+            android:layout_marginVertical="12dp"
+            android:hint="@string/enterWeight"/>
+
+        <EditText
+            android:id="@+id/editTextDose"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginVertical="12dp"
+            android:hint="@string/addDose"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_marginVertical="12dp"
-        android:hint="@string/addDose"/>
+        android:orientation="horizontal">
+
+        <EditText
+            android:id="@+id/editTextCount"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="12dp"
+            android:layout_marginVertical="12dp"
+            android:hint="@string/addCountDrug"/>
+
+        <EditText
+            android:id="@+id/editTextVolume"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginVertical="12dp"
+            android:hint="@string/addCount"/>
+    </LinearLayout>
+
+
 
     <Spinner
         android:id="@+id/spinnerPatients"
