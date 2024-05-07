@@ -4,8 +4,12 @@ import android.annotation.SuppressLint
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
+import android.view.Menu
+import android.view.MenuInflater
+import android.view.MenuItem
 import android.view.View
 import android.view.ViewGroup
+import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.hw_urban_medicine_calc.databinding.FragmentPatientsBinding
 import java.io.Serializable
@@ -23,6 +27,10 @@ class PatientsFragment : Fragment(), PatientsAdapter.PatientItemClickListener {
     ): View? {
         binding = FragmentPatientsBinding.inflate(inflater, container, false)
         val view = binding.root
+
+        val toolbar = binding.toolbar
+        (requireActivity() as AppCompatActivity).setSupportActionBar(toolbar)
+        setHasOptionsMenu(true)
 
         dbHelper = DBHelper(requireContext(), null)
 
@@ -77,5 +85,19 @@ class PatientsFragment : Fragment(), PatientsAdapter.PatientItemClickListener {
             .replace(R.id.fragment_container, patientInfoFragment)
             .addToBackStack(null)
             .commit()
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
+        inflater.inflate(R.menu.main_menu, menu)
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        when (item.itemId) {
+            R.id.action_exit -> {
+                requireActivity().finishAffinity()
+                return true
+            }
+        }
+        return super.onOptionsItemSelected(item)
     }
 }

@@ -27,4 +27,5 @@
     <string name="patientInfo">О пациенте</string>
     <string name="addCountDrug">количество препарата мг</string>
     <string name="addCount">общий объем раствора</string>
+    <string name="exit">Выход</string>
 </resources>
