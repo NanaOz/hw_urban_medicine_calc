@@ -2,6 +2,8 @@ package com.example.hw_urban_medicine_calc
 
 import android.annotation.SuppressLint
 import android.os.Bundle
+import android.text.Editable
+import android.text.TextWatcher
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.Menu
@@ -16,6 +18,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.hw_urban_medicine_calc.databinding.FragmentPatientsBinding
 import java.io.Serializable
+import java.util.Locale
 
 class PatientsFragment : Fragment(), PatientsAdapter.PatientItemClickListener {
 
@@ -39,6 +42,7 @@ class PatientsFragment : Fragment(), PatientsAdapter.PatientItemClickListener {
 
         binding.buttonAddPatient.startAnimation(slideUp)
         binding.recyclerView.startAnimation(slideUp)
+        binding.textViewSearch.startAnimation(slideUp)
 
         dbHelper = DBHelper(requireContext(), null)
 
@@ -47,6 +51,22 @@ class PatientsFragment : Fragment(), PatientsAdapter.PatientItemClickListener {
         binding.recyclerView.adapter = adapter
 
         readDataFromDatabase()
+
+        val textViewSearch = binding.textViewSearch
+
+        textViewSearch.addTextChangedListener(object : TextWatcher {
+            override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {}
+
+            override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
+                val searchText = s.toString().trim().toLowerCase(Locale.getDefault())
+                val filteredList = patientList.filter { patient ->
+                    patient.name.toLowerCase(Locale.getDefault()).contains(searchText)
+                }
+                adapter.updateList(filteredList)
+            }
+
+            override fun afterTextChanged(s: Editable?) {}
+        })
 
         val itemTouchHelper = ItemTouchHelper(object : ItemTouchHelper.SimpleCallback(0, ItemTouchHelper.LEFT or ItemTouchHelper.RIGHT) {
             override fun onMove(recyclerView: RecyclerView, viewHolder: RecyclerView.ViewHolder, target: RecyclerView.ViewHolder): Boolean {

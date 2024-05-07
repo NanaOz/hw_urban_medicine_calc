@@ -6,7 +6,7 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 
-class PatientsAdapter(private val patientList: List<Patient>, private var itemClickListener: PatientItemClickListener) : RecyclerView.Adapter<PatientsAdapter.PatientViewHolder>() {
+class PatientsAdapter(private var patientList: List<Patient>, private var itemClickListener: PatientItemClickListener) : RecyclerView.Adapter<PatientsAdapter.PatientViewHolder>() {
 
     interface PatientItemClickListener{
         fun onPatientItemClick(patient: Patient, position: Int)
@@ -38,5 +38,9 @@ class PatientsAdapter(private val patientList: List<Patient>, private var itemCl
 
     override fun getItemCount(): Int {
         return patientList.size
+    }
+    fun updateList(newList: List<Patient>) {
+        patientList = newList
+        notifyDataSetChanged()
     }
 }
